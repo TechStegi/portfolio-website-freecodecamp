@@ -1,0 +1,39 @@
+.section {
+  height: 100vh;
+}
+
+.inline {
+  display: inline;
+  background-color: blue;
+}
+
+.block {
+  display: block;
+  background-color: red;
+}
+
+.inline-block {
+  display: inline-block;
+  background-color: green;
+}
+
+.fat-color {
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 500px auto 500px auto;
+  /* Higher z-index for the yellow block */
+}
+
+.fat-color::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  z-index: -1; /* Lower z-index for the black line */
+}
